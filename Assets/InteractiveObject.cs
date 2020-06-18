@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ZoomClient;
+
 public class InteractiveObject : MonoBehaviour
 {
     [SerializeField]
@@ -21,6 +23,12 @@ public class InteractiveObject : MonoBehaviour
     private void TurnOnMessage()
     {
         messageCanvas.enabled = true;
+
+        // stub to init zoom call
+        var zoomClient = new ZoomClient.ZoomClient();
+        zoomClient.DoNothing();
+
+        zoomClient.JoinMeeting("test", "test", "test");
     }
 
     void OnTriggerExit2D(Collider2D other)
