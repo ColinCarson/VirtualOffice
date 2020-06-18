@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageCanvas: {fileID: 1924594452}
+  Player: {fileID: 534910266}
 --- !u!114 &534910274
 MonoBehaviour:
   m_ObjectHideFlags: 0
