@@ -5,6 +5,12 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     Canvas messageCanvas;
     bool trigger = false;
+    [SerializeField]
+    GameObject Player;
+
+    float x = -0.35f;
+    float y = 0.28f;
+    float z = 0.0f;
 
     void Start()
     {
@@ -17,11 +23,18 @@ public class PlayerInteract : MonoBehaviour
         {
             TurnOnMessage();
         }
+        UpdateLocation();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         trigger = true;
+    }
+
+    private void UpdateLocation()
+    {
+        messageCanvas.transform.position = Player.transform.position + new Vector3(x, y, z); 
+        // Set world position via script, this position is "relative to" building
     }
 
     private void TurnOnMessage()
