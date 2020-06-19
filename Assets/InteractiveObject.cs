@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using ZoomClient;
+using SlackLink;
 
 public class InteractiveObject : MonoBehaviour
 {
@@ -25,10 +25,8 @@ public class InteractiveObject : MonoBehaviour
         messageCanvas.enabled = true;
 
         // stub to init zoom call
-        var zoomClient = new ZoomClient.ZoomClient();
-        zoomClient.DoNothing();
-
-        zoomClient.JoinMeeting("test", "test", "test");
+        var slackLink = new SlackLink.SlackLink();
+        slackLink.SendMessageToUser("#random", "Hello from the bot!", "USLACKBOT", "");
     }
 
     void OnTriggerExit2D(Collider2D other)
