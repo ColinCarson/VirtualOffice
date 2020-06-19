@@ -12,7 +12,7 @@
 
             //var users = slackLink.GetUsers();
 
-            //var user = slackLink.GetUserStatus("U016CSH9V7S");
+            var user = slackLink.GetUserStatus("U016CSH9V7S");
 
             Console.Write("Press any key to exit");
             Console.ReadLine();

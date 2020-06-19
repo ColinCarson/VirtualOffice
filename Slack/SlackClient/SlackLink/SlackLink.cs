@@ -7,12 +7,12 @@
 
     public class SlackLink
     {
-        private const string token = "xoxp-1193273531603-1216901335264-1205857115985-01ed1db7f8aede3e71a2d398a09513c3";
+        private const string token = "eG94cC0xMTkzMjczNTMxNjAzLTEyMTY5MDEzMzUyNjQtMTE4NzQzMTAwMzA2Mi04NzA5NjcyY2JjZmY2OTBlZGI2NTI2ZGE5NGJlN2I1NQ==";
 
         public IEnumerable<string> GetUsers()
         {
             var webClient = new WebClient();
-            webClient.QueryString.Add("token", token);
+            webClient.QueryString.Add("token", DecodeToken(token));
             var result = webClient.DownloadString("	https://slack.com/api/users.list");
             var content = JObject.Parse(result);
 
@@ -22,7 +22,7 @@
         public IEnumerable<string> GetChannels()
         {
             var webClient = new WebClient();
-            webClient.QueryString.Add("token", token);
+            webClient.QueryString.Add("token", DecodeToken(token));
             var result = webClient.DownloadString("	https://slack.com/api/users.list");
             var content = JObject.Parse(result);
 
@@ -33,7 +33,7 @@
         public SlackUser GetUserStatus(string userId)
         {
             var webClient = new WebClient();
-            webClient.QueryString.Add("token", token);
+            webClient.QueryString.Add("token", DecodeToken(token));
             webClient.QueryString.Add("user", userId);
             var result = webClient.DownloadString("	https://slack.com/api/users.profile.get");
             var content = JObject.Parse(result);
@@ -47,7 +47,7 @@
         public void SendMessageToChannel(string channel, string text, string asUser, string username)
         {
             var data = new NameValueCollection();
-            data["token"] = token;
+            data["token"] = DecodeToken(token);
             data["channel"] = channel;
             data["as_user"] = asUser;           
             data["text"] = text;
@@ -59,7 +59,7 @@
         public void SendMessageToUser(string channel, string text, string asUser, string username)
         {
             var data = new NameValueCollection();
-            data["token"] = token;
+            data["token"] = DecodeToken(token);
             data["channel"] = channel;
             data["as_user"] = asUser;
             data["text"] = text;
@@ -71,6 +71,12 @@
         public void StartCall()
         {
 
+        }
+
+        private string DecodeToken(string token)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(token);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
     }
 
