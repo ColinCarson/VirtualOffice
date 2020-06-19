@@ -19,11 +19,11 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)&&trigger)
+        UpdateLocation();
+        if (Input.GetKeyDown(KeyCode.M) && trigger)
         {
             TurnOnMessage();
         }
-        UpdateLocation();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -34,7 +34,7 @@ public class PlayerInteract : MonoBehaviour
     private void UpdateLocation()
     {
         messageCanvas.transform.position = Player.transform.position + new Vector3(x, y, z); 
-        // Set world position via script, this position is "relative to" building
+        // Set world position via script, this position is "relative to" player
     }
 
     private void TurnOnMessage()

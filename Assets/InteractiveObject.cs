@@ -25,8 +25,8 @@ public class InteractiveObject : MonoBehaviour
         messageCanvas.enabled = true;
 
         // stub to init zoom call
-        var slackLink = new SlackLink.SlackLink();
-        slackLink.SendMessageToUser("#random", "Hello from the bot!", "USLACKBOT", "");
+        //var slackLink = new SlackLink.SlackLink();
+        //slackLink.SendMessageToUser("#random", "Hello from the bot!", "USLACKBOT", "");
     }
 
     void OnTriggerExit2D(Collider2D other)
