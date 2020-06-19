@@ -28,49 +28,51 @@
 
 
             return new List<string> { "General", "Chat", "Food" };
-        }
+        }        
 
         public SlackUser GetUserStatus(string userId)
         {
             var webClient = new WebClient();
             webClient.QueryString.Add("token", DecodeToken(token));
             webClient.QueryString.Add("user", userId);
-            var result = webClient.DownloadString("	https://slack.com/api/users.profile.get");
-            var content = JObject.Parse(result);
+            var profileResult = webClient.DownloadString("	https://slack.com/api/users.profile.get");
+            var profileContent = JObject.Parse(profileResult);
 
-            var displayName = (string)content["profile"]["display_name"];
-            var status = (string)content["profile"]["status_text"];
+            var displayName = (string)profileContent["profile"]["display_name"];
+            var status = (string)profileContent["profile"]["status_text"];
 
-            return new SlackUser { Name = displayName, Id = userId, Status = status };            
+            webClient = new WebClient();
+            webClient.QueryString.Add("token", DecodeToken(token));
+            webClient.QueryString.Add("user", userId);
+            var presenceResult = webClient.DownloadString("	https://slack.com/api/users.getPresence");
+            var presenceContent = JObject.Parse(presenceResult);
+
+            var online = false;
+            var active = (string)presenceContent["presence"];
+
+            if (active != "away")
+            { 
+                online = (bool)presenceContent["online"];
+            }            
+
+            return new SlackUser { Name = displayName, Id = userId, Status = status, Active = active, Online = online};            
         }
 
-        public void SendMessageToChannel(string channel, string text, string asUser, string username)
+        public void SendMessage(string target, string text)
         {
             var data = new NameValueCollection();
             data["token"] = DecodeToken(token);
-            data["channel"] = channel;
-            data["as_user"] = asUser;           
+            data["channel"] = target;   
             data["text"] = text;
             
             var webClient = new WebClient();
-            var response = webClient.UploadValues("https://slack.com/api/chat.postMessage", "POST", data);
-        }
+            webClient.UploadValues("https://slack.com/api/chat.postMessage", "POST", data);
+        }       
 
-        public void SendMessageToUser(string channel, string text, string asUser, string username)
+        public void StartZoomCall(string target, string userId, string message, string zoomUrl)
         {
-            var data = new NameValueCollection();
-            data["token"] = DecodeToken(token);
-            data["channel"] = channel;
-            data["as_user"] = asUser;
-            data["text"] = text;
-
-            var webClient = new WebClient();
-            var response = webClient.UploadValues("https://slack.com/api/chat.postMessage", "POST", data);
-        }
-
-        public void StartCall()
-        {
-
+            var text = $"<{userId}> {message} {zoomUrl}";
+            SendMessage(target, text);
         }
 
         private string DecodeToken(string token)
@@ -85,6 +87,8 @@
         public string Name;
         public string Id;
         public string Status;
+        public string Active;
+        public bool Online;        
     }
 
 }
