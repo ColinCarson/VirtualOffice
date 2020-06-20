@@ -9,7 +9,6 @@ public class UserPopUpBehaviour : MonoBehaviour
     [SerializeField]
     Canvas popUpCanvas;
     bool trigger;
-    //string NPCName;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,12 @@ public class UserPopUpBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M) && trigger)
         {
+            GetComponent<moves>().canMove = false;
             TurnOnMessage();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TurnOffMessage();
         }
     }
 
@@ -29,7 +33,6 @@ public class UserPopUpBehaviour : MonoBehaviour
     {
         if (other.name != "PLAYER")
         {
-           // NPCName = other.name;
             trigger = true;
         }
     }
@@ -37,8 +40,6 @@ public class UserPopUpBehaviour : MonoBehaviour
     private void TurnOnMessage()
     {
         popUpCanvas.enabled = true;
-        //  popUpCanvas.GetComponent<InputField>().ActivateInputField();
-        //NPCName
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -50,8 +51,9 @@ public class UserPopUpBehaviour : MonoBehaviour
         }
     }
 
-    private void TurnOffMessage()
+    public void TurnOffMessage()
     {
+        GetComponent<moves>().canMove = true;
         popUpCanvas.enabled = false;
     }
 }

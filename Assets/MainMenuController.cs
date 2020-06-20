@@ -16,7 +16,7 @@ public class MainMenuController : MonoBehaviour
 
     public void playGame()
     {
-        SceneManager.LoadScene("GameScene");
+        mainMenu.SetActive(false);
     }
 
     public void options()
@@ -38,10 +38,20 @@ public class MainMenuController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (mainMenu.activeSelf || optionsMenu.activeSelf)
         {
-            // mainMenu.SetActive(!mainMenu.activeSelf);
-            mainMenu.SetActive(true);
+            Time.timeScale = 0;
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        
+        //this is disabled for now because it pops up when you try to exit a conversation
+        /*if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            mainMenu.SetActive(!mainMenu.activeSelf);
+        }*/
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class inputUserText : MonoBehaviour
 {
-    public string userInput;
+    private string userInput;
     public GameObject inputField;
     public GameObject textSend;
 
