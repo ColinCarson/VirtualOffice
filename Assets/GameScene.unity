@@ -290,7 +290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Neil the Mole: Hi!
+  m_Text: 'Big Sexy Neil: Hi!
 
     Press C to call me or press M to message me'
 --- !u!222 &104873561
@@ -444,7 +444,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Dean the Mole: Hi!
+  m_Text: 'GanonDean: Hi!
 
     Press C to call me or press M to message me'
 --- !u!222 &181001962
@@ -21760,7 +21760,7 @@ SpriteRenderer:
   m_SortingLayerID: 495552893
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7cefe9e9e8c984bbd9ff43235be8f54f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7a4c9c121ee0a942becc6d26fd27bc2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21780,7 +21780,7 @@ RectTransform:
   m_GameObject: {fileID: 1361907063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -21863,7 +21863,7 @@ SpriteRenderer:
   m_SortingLayerID: 495552893
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7cefe9e9e8c984bbd9ff43235be8f54f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a951a9c3931128459a9986040d9bba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21904,7 +21904,7 @@ RectTransform:
   m_GameObject: {fileID: 1440146036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -22028,7 +22028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Conrad the Mole: Hi!
+  m_Text: 'SkeleConrad: Hi!
 
     Press C to call me or press M to message me'
 --- !u!222 &1485965782
@@ -22521,7 +22521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Justin the Treant: Hi!
+  m_Text: 'Justin the Thief: Hi!
 
     Press C to call me or press M to message me'
 --- !u!222 &1689284862
@@ -22814,7 +22814,7 @@ SpriteRenderer:
   m_SortingLayerID: 495552893
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7cefe9e9e8c984bbd9ff43235be8f54f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d719ee3f8d88c594ca358e8393593b49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22834,7 +22834,7 @@ RectTransform:
   m_GameObject: {fileID: 1737481566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -23321,7 +23321,7 @@ SpriteRenderer:
   m_SortingLayerID: 495552893
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4dbf9e4cb148c4dc991ed1bfc861e5e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b81c8261c0973e442a790020e46e0807, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23341,7 +23341,7 @@ Transform:
   m_GameObject: {fileID: 1991533016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.434485, y: 0.5667772, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
