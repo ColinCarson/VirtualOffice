@@ -22028,7 +22028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SkeleConrad: Hi!
+  m_Text: 'Bone-rad: Hi!
 
     Press C to call me or press M to message me'
 --- !u!222 &1485965782
