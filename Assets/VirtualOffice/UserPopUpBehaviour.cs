@@ -55,5 +55,6 @@ public class UserPopUpBehaviour : MonoBehaviour
     {
         GetComponent<moves>().canMove = true;
         popUpCanvas.enabled = false;
+
     }
 }

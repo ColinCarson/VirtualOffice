@@ -7781,6 +7781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageCanvas: {fileID: 1924594452}
   Player: {fileID: 534910266}
+  controller: {fileID: 0}
 --- !u!114 &534910274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22551,7 +22552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d243fa440adb1b34ba9ae387ec4586ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 1008689859}
+  inputField: {fileID: 1885998959}
   textSend: {fileID: 515016317}
 --- !u!4 &1647722848
 Transform:

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+//using UnityEditor.VersionControl;
+using UnityEngine.UI;
+
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField]
@@ -7,6 +10,8 @@ public class PlayerInteract : MonoBehaviour
     bool trigger = false;
     [SerializeField]
     GameObject Player;
+
+    public inputUserText controller;
 
     float x = -0.35f;
     float y = 0.28f;
@@ -52,5 +57,10 @@ public class PlayerInteract : MonoBehaviour
     private void TurnOffMessage()
     {
         messageCanvas.enabled = false;
+        controller = GameObject.FindObjectOfType(typeof(inputUserText)) as inputUserText;
+        controller.ClearInput();
+        //Text t = child.GetComponent<Text>();
+        //messageCanvas.GetComponent<Text>().text = "";
+        //t.text = "";
     }
 }

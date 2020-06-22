@@ -7,9 +7,11 @@ public class MainMenuController : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionsMenu;
+    public moves menuController;
 
     void Start()
     {
+        //SceneManager.LoadScene("MenuScene");
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
     }
@@ -17,6 +19,7 @@ public class MainMenuController : MonoBehaviour
     public void playGame()
     {
         mainMenu.SetActive(false);
+        //SceneManager.LoadScene("GameScene");
     }
 
     public void options()
@@ -47,11 +50,14 @@ public class MainMenuController : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        
+
+        menuController = GameObject.FindObjectOfType(typeof(moves)) as moves;
+        bool canMove = menuController.canMove;
+
         //this is disabled for now because it pops up when you try to exit a conversation
-        /*if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)&&canMove)
         {
             mainMenu.SetActive(!mainMenu.activeSelf);
-        }*/
+        }
     }
 }
